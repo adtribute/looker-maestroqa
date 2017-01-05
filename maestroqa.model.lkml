@@ -51,13 +51,13 @@ explore: answers {
   join: section_scores {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${answers.answer_id} = ${section_scores.section_id} ;;
+    sql_on: ${answers.answer_id} = ${section_scores.answer_id} ;;
   }
   join: sections {
     type: left_outer
     relationship: one_to_many
     sql_on: ${section_scores.template_id} = ${sections.template_id} and
-      ${section_scores.section_id} = ${sections.section_id};;
+            ${section_scores.section_id} = ${sections.section_id};;
     fields: [name, weight, is_auto_fail, is_bonus]
   }
 
