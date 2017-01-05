@@ -46,45 +46,49 @@ explore: answers {
     relationship: many_to_one
     sql_on: ${answers.template_id} = ${templates.template_id} ;;
   }
+
+  ## SECTION_SCORES + SECTIONS (sections only needed for section metadata)
   join: section_scores {
     type: left_outer
     relationship: one_to_many
     sql_on: ${answers.answer_id} = ${section_scores.section_id} ;;
   }
+  join: sections {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${section_scores.template_id} = ${sections.template_id} and
+      ${section_scores.section_id} = ${sections.section_id};;
+    fields: [name, weight, is_auto_fail, is_bonus]
+  }
+
+  ## QUESTION_SCORES + QUESTIONS (questions only needed for question metadata)
   join: question_scores {
     type: left_outer
     relationship: one_to_many
     sql_on: ${answers.answer_id} = ${question_scores.answer_id} ;;
   }
-  join: helpdesk_id_email {
-    type: left_outer
-    relationship: one_to_one
-    sql_on: ${answers.gradee_id} = ${helpdesk_id_email.helpdesk_id};;
-  }
-}
-
-
-explore:  questions {
-  label: "Questions"
-  view_name: questions
-  from: questions
-  join: question_scores {
-    type: left_outer
+  join: questions {
+    type:  left_outer
     relationship: one_to_many
-    sql_on: ${questions.template_id} = ${question_scores.template_id} and ${questions.question_id} = ${question_scores.question_id};;
+    sql_on: ${question_scores.template_id} = ${questions.template_id} and
+            ${question_scores.question_id} = ${questions.question_id};;
+    fields: [question, description, score_min, score_max, score_system]
   }
   join: options {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${options.template_id} and
             ${questions.section_id} = ${options.section_id} and
-            ${questions.question_id} = ${options.question_id};;
+            ${question_scores.option_id} = ${options.option_id};;
   }
 
-}
+  ## HELPDESK ID EMAIL TO MAP GRADEE ID TO EMAIL
+  join: helpdesk_id_email {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${answers.gradee_id} = ${helpdesk_id_email.helpdesk_id};;
+    fields: [email]
+  }
 
-explore: question_scores {
-  label: "Question scores"
-  view_name: question_scores
-  from:  question_scores
-}
+
+  }
