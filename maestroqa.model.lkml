@@ -13,6 +13,6 @@ explore: templates {
   join: sections {
     type: left_outer
     relationship: one_to_many
-    sql_on:  {templates.template_id} = ${sections.template_id} ;;
+    sql_on:  ${templates.template_id} = ${sections.template_id} ;;
   }
 }
