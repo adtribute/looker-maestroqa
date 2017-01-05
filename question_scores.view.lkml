@@ -63,4 +63,9 @@ view: question_scores {
     type: count
     drill_fields: [options.option_id, answers.answer_id, templates.name, templates.template_id, questions.question_id]
   }
+
+  measure: average_raw_score {
+    type:  average
+    sql: ${raw_score} ;;
+  }
 }
