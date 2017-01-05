@@ -18,12 +18,16 @@ explore: templates {
   join: questions {
     type:  left_outer
     relationship: one_to_many
-    sql_on:  ${templates.template_id} = ${questions.template_id} ;;
+    sql_on:  ${templates.template_id} = ${questions.template_id} and
+             ${sections.section_id} = ${questions.question_id};;
+
   }
   join: options {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${templates.template_id} = ${options.template_id} ;;
+    sql_on: ${templates.template_id} = ${options.template_id} and
+            ${sections.section_id} = ${options.section_id} and
+            ${questions.question_id} = ${options.question_id};;
   }
   join: answers {
     type: left_outer
