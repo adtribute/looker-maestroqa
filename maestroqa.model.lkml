@@ -19,7 +19,7 @@ explore: templates {
     type:  left_outer
     relationship: one_to_many
     sql_on:  ${templates.template_id} = ${questions.template_id} and
-             ${sections.section_id} = ${questions.question_id};;
+             ${sections.section_id} = ${questions.section_id};;
 
   }
   join: options {
