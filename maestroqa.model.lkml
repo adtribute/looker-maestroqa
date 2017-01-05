@@ -78,3 +78,9 @@ explore:  questions {
   }
 
 }
+
+explore: question_scores {
+  label: "Question scores"
+  view_name: question_scores
+  from:  question_scores
+}
