@@ -6,7 +6,7 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-explore: rubric_templates {
+explore: templates {
   label: "Rubric Templates"
   view_name: templates
   from: templates
