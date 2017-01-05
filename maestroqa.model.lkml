@@ -15,4 +15,14 @@ explore: templates {
     relationship: one_to_many
     sql_on:  ${templates.template_id} = ${sections.template_id} ;;
   }
+  join: questions {
+    type:  left_outer
+    relationship: one_to_many
+    sql_on:  ${templates.template_id} = ${questions.template_id} ;;
+  }
+  join: options {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${templates.template_id} = ${options.template_id} ;;
+  }
 }
