@@ -61,24 +61,28 @@ explore: answers {
     fields: [name, weight, is_auto_fail, is_bonus]
   }
 
-  ## QUESTION_SCORES + QUESTIONS (questions only needed for question metadata)
-  join: question_scores {
-    type: left_outer
-    relationship: one_to_many
-    sql_on: ${answers.answer_id} = ${question_scores.answer_id} ;;
-  }
   join: questions {
     type:  left_outer
     relationship: one_to_many
-    sql_on: ${question_scores.template_id} = ${questions.template_id} and
-            ${question_scores.question_id} = ${questions.question_id};;
+    sql_on: ${answers.template_id} = ${questions.template_id} and
+            ${sections.section_id} = ${questions.section_id} ;;
     fields: [question, description, score_min, score_max, score_system]
   }
+
+  join: question_scores {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${answers.answer_id} = ${question_scores.answer_id} and
+            ${questions.template_id} = ${question_scores.template_id} and
+            ${questions.question_id} = ${question_scores.question_id};;
+  }
+
   join: options {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${options.template_id} and
             ${questions.section_id} = ${options.section_id} and
+            ${question_scores.question_id} = ${options.question_id} and
             ${question_scores.option_id} = ${options.option_id};;
   }
 
