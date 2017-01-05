@@ -8,6 +8,13 @@ view: sections {
     sql: ${TABLE}.section_id ;;
   }
 
+  dimension: name {
+    description: "Name of this section"
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+
   dimension: default_answer {
     description: "If not NULL, is either 'na' or 'max', specifying how to pre-fill answers for this section"
     type: string
