@@ -8,6 +8,13 @@ view: sections {
     sql: ${TABLE}.section_id ;;
   }
 
+  dimension: section_index {
+    description: "Index of this section within its template"
+    hidden: yes
+    type: number
+    sql: ${TABLE}.section_index ;;
+  }
+
   dimension: name {
     description: "Name of this section"
     type: string

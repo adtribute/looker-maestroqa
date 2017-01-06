@@ -8,6 +8,13 @@ view: questions {
     sql: ${TABLE}.question_id ;;
   }
 
+  dimension: question_index {
+    description: "Index of this question within its section"
+    hidden: yes
+    type: number
+    sql: ${TABLE}.question_index ;;
+  }
+
   dimension: description {
     description: "If present, is a description for this question"
     type: string
