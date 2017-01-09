@@ -44,4 +44,12 @@
       width: 4
       refresh: 2 hours
 
-
+    - name: templates_by_day
+      title: Templates by day
+      type: table
+      explore: rubric_answers
+      pivots: answers.created_date
+      measures: [answers.average_total_score, answers.count]
+      height: 4
+      width: 4
+      refresh: 2 hours
