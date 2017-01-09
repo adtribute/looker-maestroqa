@@ -37,7 +37,7 @@ explore: templates {
 
 }
 
-explore: answers {
+explore: rubric_answers {
   label: "Rubric Answers"
   view_name: answers
   from:  answers
