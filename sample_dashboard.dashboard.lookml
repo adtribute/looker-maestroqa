@@ -48,7 +48,7 @@
       title: Templates by day
       type: table
       explore: rubric_answers
-      pivots: answers.created_date
+      dimensions: answers.created_date
       measures: [answers.average_total_score, answers.count]
       height: 4
       width: 4
