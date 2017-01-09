@@ -63,3 +63,4 @@
       height: 4
       width: 4
       refresh: 2 hours
+      y_axis_combined: false
