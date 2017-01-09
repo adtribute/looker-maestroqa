@@ -58,7 +58,7 @@
       title: Templates
       type: looker_column
       explore: rubric_answers
-      pivots: templates.name
+      dimensions: templates.name
       measures: [answers.count, answers.average_total_score]
       height: 2
       width: 4
