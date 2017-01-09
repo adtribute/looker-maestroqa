@@ -11,8 +11,8 @@
       type: single_value
       explore: rubric_answers
       measures: answers.count
-      height: 4
-      width: 4
+      height: 2
+      width: 2
       refresh: 2 hours
       note:
         text: "Note text"
@@ -26,10 +26,22 @@
       measures: answers.count
       filters:
         answers.created_date : '30 days'
-      height: 4
-      width: 4
+      height: 2
+      width: 2
       refresh: 2 hours
       note:
         text: "Note text"
         state: expanded
         display: above
+
+    - name: average_score_by_agent
+      title: Average Total Score by Agent
+      type: looker_bar
+      explore: rubric_answers
+      measures: answers.average_total_score
+      pivots: helpdesk_id_email.email
+      height: 4
+      width: 4
+      refresh: 2 hours
+
+
