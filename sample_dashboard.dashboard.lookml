@@ -53,3 +53,13 @@
       height: 4
       width: 4
       refresh: 2 hours
+
+    - name: score_count_by_template
+      title: Templates
+      type: looker_column
+      explore: rubric_answers
+      pivots: templates.name
+      measures: [answers.count, answers.average_total_score]
+      height: 2
+      width: 4
+      refresh: 2 hours
