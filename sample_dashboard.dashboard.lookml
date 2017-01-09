@@ -60,6 +60,6 @@
       explore: rubric_answers
       dimensions: templates.name
       measures: [answers.count, answers.average_total_score]
-      height: 2
+      height: 4
       width: 4
       refresh: 2 hours
