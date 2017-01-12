@@ -94,5 +94,12 @@ explore: rubric_answers {
     fields: [email]
   }
 
+  ## GROUP NAME TO MAP GRADEE ID TO GROUP
+  join: user_groups {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${answers.gradee_id} = ${user_groups.agent_id};;
+    fields: [group_name]
+  }
 
   }

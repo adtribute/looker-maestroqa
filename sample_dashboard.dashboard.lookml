@@ -88,3 +88,19 @@
       height: 4
       width: 6
       refresh: 2 hours
+
+    - name: rubric_scores_by_group
+      title: Group Scores by Rubric
+      note:
+        text: "Last 30 days"
+        state: expanded
+        display: below
+      type: table
+      explore: rubric_answers
+      measures: answers.average_total_score
+      dimensions: [user_groups.group_name, templates.name]
+      filters:
+        answers.created_date : '30 days'
+      height: 4
+      width: 6
+      refresh: 2 hours
