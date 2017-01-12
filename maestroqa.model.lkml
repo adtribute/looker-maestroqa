@@ -97,7 +97,7 @@ explore: rubric_answers {
   ## GROUP NAME TO MAP GRADEE ID TO GROUP
   join: user_groups {
     type: left_outer
-    relationship: many_to_many
+    relationship: one_to_one
     sql_on: ${answers.gradee_id} = ${user_groups.agent_id};;
     fields: [group_name]
   }
