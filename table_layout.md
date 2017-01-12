@@ -16,4 +16,8 @@ An answer is an application of a template to a ticket/case (tickets and cases ar
 Each answer can have several section scores, each of which contains score data aggregated over a particular section, and similarly each answer can have several question scores, which contain score data for a particular question. Note that question scores are not owned by section scores despite questions being owned by sections in the **templates** diagram. Similar to **templates** and its child tables, each child table contains all its parent identifiers (`(answer_id, template_id, gradable_id)` in this case) as well as level-specific identifiers: `section_id` and `question_id` for **section_scores** and **question_scores** respectively.
 
 ## Helpdesk ID/Emails
-Finally we also include a table to map helpdesk ids to emails for use in joins and visualizations into human-readable values. This is simply a map between the `(zendesk|desk|freshdesk)_id` and `email` for all relevant agents.
+We also include a table to map helpdesk ids to emails for use in joins and visualizations into human-readable values. This is simply a map between the `(zendesk|desk|freshdesk)_id` and `email` for all relevant agents.
+
+
+## User Groups
+Finally we also include a table to map groups of agents to their respective agent ids for use in joins and visualizations. This is simply a map between `group_id/group_name` and `agent_id` for each agent that belongs to a group.
