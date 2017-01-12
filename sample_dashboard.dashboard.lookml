@@ -55,6 +55,38 @@
         display: below
       y_axis_combined: false
 
+    - name: overall_scores_by_group
+      title: Group Overall Scores
+      note:
+        text: "Last 30 days"
+        state: expanded
+        display: below
+      type: looker_column
+      explore: rubric_answers
+      measures: answers.average_total_score
+      dimensions: user_groups.group_name
+      filters:
+        answers.created_date : '30 days'
+      height: 4
+      width: 6
+      refresh: 2 hours
+
+    - name: rubric_scores_by_group
+      title: Group Scores by Rubric
+      note:
+        text: "Last 30 days"
+        state: expanded
+        display: below
+      type: table
+      explore: rubric_answers
+      measures: answers.average_total_score
+      dimensions: [user_groups.group_name, templates.name]
+      filters:
+        answers.created_date : '30 days'
+      height: 4
+      width: 6
+      refresh: 2 hours
+
     - name: average_score_by_agent
       title: Agent Overall Scores
       note:
@@ -83,22 +115,6 @@
       explore: rubric_answers
       measures: answers.average_total_score
       dimensions: [helpdesk_id_email.email, templates.name]
-      filters:
-        answers.created_date : '30 days'
-      height: 4
-      width: 6
-      refresh: 2 hours
-
-    - name: rubric_scores_by_group
-      title: Group Scores by Rubric
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
-      type: table
-      explore: rubric_answers
-      measures: answers.average_total_score
-      dimensions: [user_groups.group_name, templates.name]
       filters:
         answers.created_date : '30 days'
       height: 4
