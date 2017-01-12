@@ -4,119 +4,94 @@
   tile_size: 100
 
   filters:
+    - name: grade_created_date
+      title: "Grade Creation Date"
+      type: date_filter
+      field: answers.created_date
+      default_value: 'last 30 days'
 
   elements:
 
-    - name: answers_last_month
+    - name: total_grades
       title: Total Grades
       type: single_value
       explore: rubric_answers
       measures: answers.count
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
-      filters:
-        answers.created_date : '30 days'
       height: 3
       width: 2
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
 
-    - name: templates_by_day in the last 30 days
+    - name: grades_by_day
       title: Overall Grades by Day
       type: looker_line
       explore: rubric_answers
       dimensions: answers.created_date
       measures: [answers.average_total_score, answers.count]
-      filters:
-        answers.created_date : '30 days'
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       height: 3
       width: 4
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
 
-    - name: score_count_by_template
+    - name: grades_by_template
       title: Rubric Scores and Counts
       type: looker_column
       explore: rubric_answers
       dimensions: templates.name
       measures: [answers.count, answers.average_total_score]
-      filters:
-        answers.created_date : '30 days'
       height: 3
       width: 6
       refresh: 2 hours
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       y_axis_combined: false
+      listen:
+        grade_created_date: answers.created_date
 
     - name: overall_scores_by_group
       title: Group Overall Scores
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       type: looker_column
       explore: rubric_answers
       measures: answers.average_total_score
       dimensions: user_groups.group_name
-      filters:
-        answers.created_date : '30 days'
       height: 4
       width: 6
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
 
     - name: rubric_scores_by_group
       title: Group Scores by Rubric
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       type: table
       explore: rubric_answers
       measures: answers.average_total_score
       dimensions: [user_groups.group_name, templates.name]
-      filters:
-        answers.created_date : '30 days'
       height: 4
       width: 6
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
 
-    - name: average_score_by_agent
+    - name: overall_scores_by_agent
       title: Agent Overall Scores
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       type: looker_column
       explore: rubric_answers
       measures: answers.average_total_score
       dimensions: helpdesk_id_email.email
-      series_labels:
-        helpdesk_id_email.email: 'Email'
-      filters:
-        answers.created_date : '30 days'
       height: 4
       width: 6
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
 
     - name: rubric_scores_by_agent
       title: Agent Scores by Rubric
-      note:
-        text: "Last 30 days"
-        state: expanded
-        display: below
       type: table
       explore: rubric_answers
       measures: answers.average_total_score
       dimensions: [helpdesk_id_email.email, templates.name]
-      filters:
-        answers.created_date : '30 days'
       height: 4
       width: 6
       refresh: 2 hours
+      listen:
+        grade_created_date: answers.created_date
