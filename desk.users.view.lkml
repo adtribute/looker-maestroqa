@@ -1,3 +1,9 @@
+# # This is a sample of what a desk.users view  might look like
+# # See the API for user structure: http://dev.desk.com/API/users/
+#
+# # You'll want to replace this entirely with the structure of your existing
+# # (or custom) helpdesk Looker block
+
 view: desk_users {
   sql_table_name: public.desk_users ;;
 

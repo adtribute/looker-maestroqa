@@ -1,3 +1,10 @@
+# # This is a sample of what a zendesk.users view  might look like
+# # See the API for user structure: https://developer.zendesk.com/rest_api/docs/core/usesr
+#
+# # You'll want to replace this entirely with the structure of your existing
+# # (or custom) helpdesk Looker block
+
+
 view: zendesk_users {
   sql_table_name: public.zendesk_users ;;
 

@@ -12,7 +12,7 @@
     - name: total_templates
       title: Number of templates
       type: single_value
-      explore: extendo
+      explore: templates
       measures: templates.count
       height: 3
       width: 2

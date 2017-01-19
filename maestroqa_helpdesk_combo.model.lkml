@@ -7,23 +7,36 @@
 #
 # # Note that we don't include views here since those are included by the models
 
-connection: "staging_postgres"
+connection: "staging_postgres" # Input your connection here
 
 include: "maestroqa.model.lkml"
-# include: "helpdesk.model.lkml" # -- helpdesk model gets included here
+include: "zendesk.model.lkml" # comment this out if you don't want use zendesk
+include: "desk.model.lkml" # comment this out if you don't use desk
+
 include: "*.dashboard.lookml"  # include all dashboards in this project
-# # Select the views that should be a part of this model,
-# # and define the joins that connect them together.
-#
-# explore: order_items {
-#   join: orders {
-#     sql_on: ${orders.id} = ${order_items.order_id}
-#   }
-#
-#   join: users {
-#     sql_on: ${users.id} = ${orders.user_id}
-#   }
-# }
-explore:  extendo {
- extends: [templates]
+
+
+# # If you want to use an explore from one of the included models you can do that
+# # directly without having to write any code here
+# # e.g. you can reference the 'templates' explore from the maestroqa model directly
+
+# # If you want to use an explore that pulls from multiple models, either extend
+# # an existing explore
+explore:  answers_ticket_extend { # Extends case
+  extends: [rubric_answers]
+  join: zendesk_tickets {
+    from: zendesk_tickets
+    relationship: many_to_one
+    sql_on: ${answers.gradable_id} = ${zendesk_tickets.id} ;;
+ }
+}
+
+# # Alternatively, you can build from scratch here
+explore: answers_ticket_scratch {
+  from: answers
+  join: zendesk_tickets {
+    from: zendesk_tickets
+    relationship: many_to_one
+    sql_on: ${answers_ticket_scratch.gradable_id} = ${zendesk_tickets.id} ;;
+  }
 }

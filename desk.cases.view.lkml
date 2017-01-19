@@ -1,3 +1,9 @@
+# # This is a sample of what a desk.cases view  might look like
+# # See the API for case structure: http://dev.desk.com/API/cases/
+#
+# # You'll want to replace this entirely with the structure of your existing
+# # (or custom) helpdesk Looker block
+
 view: desk_cases {
   sql_table_name: public.desk_cases ;;
 

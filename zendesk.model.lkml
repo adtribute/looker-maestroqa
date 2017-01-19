@@ -4,8 +4,7 @@
 
 connection: "staging_postgres"
 
-include: "*.zendesk.view.lkml" # include all views that end in .zendesk
-include: "*.zendesk.dashboard.lookml"  # include all dashboards that end in .zendesk
+include: "zendesk.*.view.lkml" # include all views that end in .zendesk
 
 
 # # Select the views that should be a part of this model,
