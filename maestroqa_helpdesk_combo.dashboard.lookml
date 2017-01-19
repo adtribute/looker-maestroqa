@@ -23,6 +23,7 @@
       explore: answers_ticket_extend
       filters:
         zendesk_tickets.subject: '-null'
+      measures: answers.count
       height: 3
       width: 2
       refresh: 2 hours
