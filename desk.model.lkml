@@ -4,8 +4,7 @@
 
 connection: "staging_postgres"
 
-include: "*.desk.view.lkml" # include all views that end in .desk
-include: "*.desk.dashboard.lookml"  # include all dashboards that end in .desk
+include: "desk.*.view.lkml" # include all views that start with 'desk.'
 
 
 # # Select the views that should be a part of this model,

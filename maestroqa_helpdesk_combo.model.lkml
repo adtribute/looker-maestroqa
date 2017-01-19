@@ -22,12 +22,12 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 
 # # If you want to use an explore that pulls from multiple models, either extend
 # # an existing explore
-explore:  answers_ticket_extend { # Extends case
+explore:  answers_ticket_extend { # Extends usage example
   extends: [rubric_answers]
-  join: zendesk_tickets {
-    from: zendesk_tickets
+  join: desk_cases {
+    from: desk_cases
     relationship: many_to_one
-    sql_on: ${answers.gradable_id} = ${zendesk_tickets.id} ;;
+    sql_on: ${answers.gradable_id} = ${desk_cases.id} ;;
  }
 }
 
