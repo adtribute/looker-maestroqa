@@ -17,3 +17,12 @@
       height: 3
       width: 2
       refresh: 2 hours
+    - name: extends_example
+      title: 'Extends Explore: Number of tickets'
+      type: single_value
+      explore: answers_ticket_extend
+      filters:
+        zendesk_tickets.subject: '-null'
+      height: 3
+      width: 2
+      refresh: 2 hours

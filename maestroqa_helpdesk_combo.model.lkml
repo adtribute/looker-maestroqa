@@ -24,10 +24,10 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 # # an existing explore
 explore:  answers_ticket_extend { # Extends usage example
   extends: [rubric_answers]
-  join: desk_cases {
-    from: desk_cases
+  join: zendesk_tickets {
+    from: zendesk_tickets
     relationship: many_to_one
-    sql_on: ${answers.gradable_id} = ${desk_cases.id} ;;
+    sql_on: ${answers.gradable_id} = ${zendesk_tickets.id} ;;
  }
 }
 
