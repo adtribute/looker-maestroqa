@@ -1,10 +1,15 @@
-connection: "staging_postgres" # or whatever connection you
+## This explore is intended to be JUST the MaestroQA generated data
+#  For integration with a helpdesk block, see the documentation titled
+#  'helpdesk_integration' (warning: some dev experience probably required)
 
-# include all the views that end in .maestroqa
-include: "*.maestroqa.view"
 
-# include all the dashboards
-include: "*.dashboard"
+connection: "staging_postgres" # or whatever your connection is called
+
+# include all the views that maestroqa uses
+include: "maestroqa.*.view"
+
+# include ONLY the maestroqa specifi dashboard
+include: "maestroqa.dashboard"
 
 explore: templates {
   label: "Rubric Templates"
