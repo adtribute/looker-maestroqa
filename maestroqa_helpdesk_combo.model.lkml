@@ -8,25 +8,22 @@
 # # Note that we don't include views here since those are included by the models
 
 connection: "staging_postgres"
+
+include: "maestroqa.model.lkml"
+# include: "helpdesk.model.lkml" # -- helpdesk model gets included here
+include: "*.dashboard.lookml"  # include all dashboards in this project
+# # Select the views that should be a part of this model,
+# # and define the joins that connect them together.
 #
-# include: "maestroqa.model.lkml"
-# # include: "helpdesk.model.lkml" # -- helpdesk model gets included here
-# include: "*.dashboard.lookml"  # include all dashboards in this project
+# explore: order_items {
+#   join: orders {
+#     sql_on: ${orders.id} = ${order_items.order_id}
+#   }
 #
-# # # Select the views that should be a part of this model,
-# # # and define the joins that connect them together.
-# #
-# # explore: order_items {
-# #   join: orders {
-# #     sql_on: ${orders.id} = ${order_items.order_id}
-# #   }
-# #
-# #   join: users {
-# #     sql_on: ${users.id} = ${orders.user_id}
-# #   }
-# # }
-#
-# explore:  extendo {
-#   extends: [templates]
+#   join: users {
+#     sql_on: ${users.id} = ${orders.user_id}
+#   }
 # }
-#
+explore:  extendo {
+ extends: [templates]
+}

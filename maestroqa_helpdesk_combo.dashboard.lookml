@@ -9,5 +9,11 @@
   filters:
 
   elements:
-    - name: hello_world
-      type: looker_column
+    - name: total_templates
+      title: Number of templates
+      type: single_value
+      explore: extendo
+      measures: templates.count
+      height: 3
+      width: 2
+      refresh: 2 hours
