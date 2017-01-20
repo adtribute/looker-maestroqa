@@ -1,14 +1,14 @@
-## This explore is intended to be JUST the MaestroQA generated data
-#  For integration with a helpdesk block, see the documentation titled
-#  'helpdesk_integration' (warning: some dev experience probably required)
+# # This explore is intended to be JUST the MaestroQA generated data
+# # For integration with a helpdesk block, see the documentation titled
+# # 'helpdesk_integration' (warning: some dev experience probably required)
 
 
-connection: "staging_postgres" # or whatever your connection is called
+connection: "your_connection_here" # Replace with your connection name
 
 # include all the views that maestroqa uses
 include: "maestroqa.*.view"
 
-# include ONLY the maestroqa specifi dashboard
+# include ONLY the maestroqa specific dashboard
 include: "maestroqa.dashboard"
 
 explore: templates {

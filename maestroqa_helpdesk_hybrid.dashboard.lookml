@@ -1,8 +1,8 @@
 # # This is the dashboard that you probably want to use for elements that come from both
 # # MaestroQA AND Helpdesk data.
 
-- dashboard: maestroqa_helpdesk_combo
-  title: Maestroqa Helpdesk Combo
+- dashboard: maestroqa_helpdesk_hybrid
+  title: Maestroqa Helpdesk Hybrid
   layout: tile
   tile_size: 100
 
@@ -42,5 +42,3 @@
       height: 3
       width: 2
       refresh: 2 hours
-
-

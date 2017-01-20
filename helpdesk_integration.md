@@ -1,3 +1,6 @@
+LOOKER.COM FORMATS THIS DOCUMENT WEIRDLY.
+PLEASE REFER TO THE [GITHUB VERSION](https://github.com/adtribute/looker-maestroqa/blob/master/helpdesk_integration.md) FOR CLEANER FORMATTING.
+
 # Helpdesk Integration
 
 This document details how one might merge an existing Looker Block with helpdesk data into this block, and how to build explores and dashboard elements with both MaestroQA and helpdesk data.
@@ -45,7 +48,7 @@ include "<helpdesk>.*.dashboard" # imports just HELPDESK dashboards
 If you've followed these steps correctly, go ahead and commit your changes to the `maestroqa` repo and pull these changes on your Looker instance and validate that the LookML is valid.
 
 ## Building a hybrid model/dashobard
-Now all that's left is building out the Model that uses both Helpdesk and MaestroQA data. On your Looker instance, examine the Model titled `maestroqa_helpdesk_combo`. This gives an example of how you can fold in your MaestroQA models and Helpdesk Models and build explores using views from each of the now-merged projects. You'll want to explicitly list the models that get included, but you don't need to include any views (if they're already included by the models):
+Now all that's left is building out the Model that uses both Helpdesk and MaestroQA data. On your Looker instance, examine the Model titled `maestroqa_helpdesk_hybrid`. This gives an example of how you can fold in your MaestroQA models and Helpdesk Models and build explores using views from each of the now-merged projects. You'll want to explicitly list the models that get included, but you don't need to include any views (if they're already included by the models):
 ```
 include: "maestroqa.model.lkml"
 include: "<helpdesk>.model.lkml"
@@ -74,4 +77,4 @@ explore: answers_ticket_scratch {
 ```
 Regardless of the source of the explore, you'll be able to use it as the source of an element within your dashboard. At this stage, you  should be all set to build out whichever metrics/dashboard elements you desire! Happy exploring!
 
-(caveat: if you run into any problems, shoot team@maestroqa.com an email and we'd love to help you get things set up)
+Lastly, if you run into any problems, shoot [team@maestroqa.com](mailto:team@maestroqa.com) an email and we'd love to help you get things set up.

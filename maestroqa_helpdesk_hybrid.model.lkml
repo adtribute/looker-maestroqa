@@ -7,7 +7,7 @@
 #
 # # Note that we don't include views here since those are included by the models
 
-connection: "staging_postgres" # Input your connection here
+connection: "your_connection_here" # Replace with your connection name
 
 include: "maestroqa.model.lkml"
 include: "zendesk.model.lkml" # comment this out if you don't want use zendesk

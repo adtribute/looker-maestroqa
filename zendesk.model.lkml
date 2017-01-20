@@ -1,8 +1,8 @@
-## This explore is intended to be JUST the Zendesk generated data (not Maestro data)
-#  You'll probably want to replace this with the existing Zendesk block you have.
-#  See the longer discussion in 'helpdesk_integration' documents
+# # This explore is intended to be JUST the Zendesk generated data (not Maestro data)
+# # You'll probably want to replace this with the existing Zendesk block you have.
+# # See the longer discussion in 'helpdesk_integration' documents
 
-connection: "staging_postgres"
+connection: "your_connection_here" # Replace with your connection name
 
 include: "zendesk.*.view.lkml" # include all views that end in .zendesk
 
