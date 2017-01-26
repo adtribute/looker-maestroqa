@@ -66,6 +66,14 @@ view: answers {
     sql: ${TABLE}.total_score ;;
   }
 
+  dimension: total_score_tiered {
+    description: "The total weighted score"
+    type: tier
+    tiers: [0,50,70,80,90]
+    style: integer
+    sql: ${total_score} ;;
+  }
+
   dimension_group: updated {
     description: "UTC time this answer was last updated"
     type: time
@@ -81,6 +89,7 @@ view: answers {
   measure: average_total_score {
     type: average
     sql:  ${total_score} ;;
+    value_format_name: decimal_2
   }
 
 }
