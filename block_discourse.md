@@ -8,7 +8,7 @@ This Block tracks individual, group, and team quality scores and lets you compar
 - Connect quality scores to your helpdesk data to understand relationships between metrics such as how response-time and quality are related
 - Identify top performers and agents or groups who need additional guidance
 - Identify scorecards, sections, or questions where your team's performance is lowest so you can improve your training
-- Compare your ticket data to the quality of response; this allows you to analyze the correlations between which tags or ticket-types your team is struggling or excelling on, for example
+- Compare your ticket data to the quality of response; this allows you to analyze the correlations between which tags or ticket-types your team is struggling or excelling on
 
 ## How to implement this block
 The LookML for this block can be found in this [Github repo](https://github.com/adtribute/looker-maestroqa). You can either download the entire block into your Looker application by following the directions outlined [here](https://discourse.looker.com/t/copying-a-lookml-project-into-looker-from-a-github-repo/1209), or selectively migrate pieces of the block by simply copying + pasting the block LookML into your Looker instance.
