@@ -188,6 +188,8 @@
       y_axis_unpin: true
       y_axis_labels: ['Agent Name']
       x_axis_labels: ['# of Assigned tickets']
+      y_axis_min: ['1000']
+      y_axis_max: ['1150']
 
 
     - name: least_active_agents
@@ -232,3 +234,5 @@
       hidden_series: [zendesk_users.count]
       y_axis_labels: ['Agent Name']
       x_axis_labels: ['# of Assigned tickets']
+      y_axis_min: ['1000']
+      y_axis_max: ['1150']
