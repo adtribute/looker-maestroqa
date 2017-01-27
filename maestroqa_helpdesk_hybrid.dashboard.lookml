@@ -49,7 +49,7 @@
       type: looker_column
       model: zendesk
       explore: zendesk_tickets
-      dimensions: [zendesk_tickets.created_day_of_week]
+      dimensions: [zendesk_tickets.created_day_of_week_index]
       measures: [zendesk_tickets.count]
       height: 3
       width: 6
