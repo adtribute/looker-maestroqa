@@ -12,7 +12,7 @@ explore: zendesk_tickets {
   join:  zendesk_users {
     from: zendesk_users
     relationship: many_to_one
-    sql_on: ${zendesk_tickets.assignee_id} = } ;;
+    sql_on: ${zendesk_tickets.assignee_id} = ${zendesk_users.id} ;;
   }
 }
 
