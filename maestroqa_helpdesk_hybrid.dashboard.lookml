@@ -50,7 +50,7 @@
       explore: zendesk_tickets
       measures: zendesk_tickets.count
       height: 3
-      width: 2
+      width: 3
       refresh: 2 hours
 
 
@@ -136,3 +136,43 @@
       series_types: {}
       colors: ["#7FCDAE", "#B1DB7A", "#CADF79", "#E2DF78", "#E5C877", "#E7AF75", "#EB9474"]
       series_colors: {}
+
+    - name: most_active_agents
+      title: Most Active Agents
+      type: looker_bar
+      model: zendesk
+      explore: zendesk_tickets
+      dimensions: [zendesk_users.name]
+      measures: [zendesk_tickets.count]
+      height: 3
+      width: 6
+      listen:
+        zendesk_tickets_count: zendesk_tickets.count
+      sorts: [zendesk_tickets.count desc]
+      limit: '5'
+      column_limit: '50'
+      query_timezone: America/Los_Angeles
+      stacking: ''
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: true
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      series_types: {}
+      y_axis_unpin: true

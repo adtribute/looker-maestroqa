@@ -9,6 +9,11 @@ include: "zendesk.*.view.lkml" # include all views that end in .zendesk
 
 explore: zendesk_tickets {
   from: zendesk_tickets
+  join:  zendesk_users {
+    from: zendesk_users
+    relationship: many_to_one
+    sql_on: ${zendesk_tickets.assignee_id} = } ;;
+  }
 }
 
 # # Select the views that should be a part of this model,
