@@ -1,4 +1,4 @@
-# Table Layout
+# README: Table Layout
 
 This document briefly discusses the data models we use to store rubrics templates and their corresponding answers. Feel free to peruse the various views for more explicit DDL, but this should serve as a decent intro to the data that is exported by Maestro into Looker.
 

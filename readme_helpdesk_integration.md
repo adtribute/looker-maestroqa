@@ -1,7 +1,7 @@
 LOOKER.COM FORMATS THIS DOCUMENT WEIRDLY.
 PLEASE REFER TO THE [GITHUB VERSION](https://github.com/adtribute/looker-maestroqa/blob/master/helpdesk_integration.md) FOR CLEANER FORMATTING.
 
-# Helpdesk Integration
+# README: Helpdesk Integration
 
 This document details how one might merge an existing Looker Block with helpdesk data into this block, and how to build explores and dashboard elements with both MaestroQA and helpdesk data.
 
