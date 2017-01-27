@@ -55,7 +55,7 @@
       width: 6
       listen:
         ticket_created_day_of_week: zendesk_tickets.created_day_of_week
-      sorts: [zendesk_Tickets.created_day_of_week_index asc]
+      sorts: [zendesk_Tickets.created_day_of_week asc]
       limit: '500'
       column_limit: '50'
       query_timezone: America/Los_Angeles
