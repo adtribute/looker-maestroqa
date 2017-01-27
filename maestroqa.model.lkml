@@ -8,8 +8,9 @@ connection: "your_connection_here" # Replace with your connection name
 # include all the views that maestroqa uses
 include: "maestroqa.*.view"
 
-# include ONLY the maestroqa specific dashboard
-include: "maestroqa.dashboard"
+# DON'T INCLUDE ANY DASHBOARDS HERE
+# ALL DASHBOARDS ARE INCLUDED IN THE maestroqa_helpdesk_hybrid
+
 
 explore: templates {
   label: "Rubric Templates"
