@@ -167,4 +167,10 @@ view: zendesk_tickets {
     type: count
     drill_fields: [id]
   }
+
+  measure: count_2 {
+    type: count
+    drill_fields: [id]
+
+  }
 }

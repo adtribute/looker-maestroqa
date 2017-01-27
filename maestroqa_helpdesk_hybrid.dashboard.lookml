@@ -198,7 +198,7 @@
       model: zendesk
       explore: zendesk_tickets
       dimensions: [zendesk_users.name]
-      measures: [zendesk_users.count, zedesk_tickets.count]
+      measures: [zendesk_tickets.count_2, zedesk_tickets.count]
       height: 3
       width: 6
       listen:
@@ -231,7 +231,7 @@
       totals_color: "#808080"
       series_types: {}
       y_axis_unpin: true
-      hidden_series: [zendesk_users.count]
+      hidden_series: [zendesk_users.count_2]
       y_axis_labels: ['Agent Name']
       x_axis_labels: ['# of Assigned tickets']
       y_axis_min: ['1000']
