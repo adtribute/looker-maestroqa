@@ -189,13 +189,14 @@
       y_axis_labels: ['Agent Name']
       x_axis_labels: ['# of Assigned tickets']
 
+
     - name: least_active_agents
       title: Least Active Agents
       type: looker_bar
       model: zendesk
       explore: zendesk_tickets
       dimensions: [zendesk_users.name]
-      measures: [zendesk_tickets.count]
+      measures: [zendesk_users.count, zedesk_tickets.count]
       height: 3
       width: 6
       listen:
@@ -225,8 +226,9 @@
       show_null_labels: false
       show_totals_labels: false
       show_silhouette: false
-      totals_color: "#B1DB7A"
+      totals_color: "#808080"
       series_types: {}
       y_axis_unpin: true
+      hidden_series: [zendesk_users.count]
       y_axis_labels: ['Agent Name']
       x_axis_labels: ['# of Assigned tickets']
