@@ -58,7 +58,7 @@
       type: single_value
       model: maestroqa
       explore: rubric_answers
-      measures: rubric_answers.count
+      measures: answers.count
       height: 3
       width: 3
       refresh: 2 hours
@@ -186,6 +186,8 @@
       totals_color: "#808080"
       series_types: {}
       y_axis_unpin: true
+      y_axis_labels: ['Agent Name']
+      x_axis_labels: ['# of Assigned tickets']
 
     - name: least_active_agents
       title: Least Active Agents
@@ -223,6 +225,8 @@
       show_null_labels: false
       show_totals_labels: false
       show_silhouette: false
-      totals_color: "#808080"
+      totals_color: "#B1DB7A"
       series_types: {}
       y_axis_unpin: true
+      y_axis_labels: ['Agent Name']
+      x_axis_labels: ['# of Assigned tickets']
