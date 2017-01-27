@@ -38,7 +38,9 @@ view: zendesk_tickets {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_week,
+      day_of_week_index
     ]
     sql: ${TABLE}.created_at ;;
   }

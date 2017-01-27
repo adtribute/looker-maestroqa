@@ -7,6 +7,10 @@ connection: "your_connection_here" # Replace with your connection name
 include: "zendesk.*.view.lkml" # include all views that end in .zendesk
 
 
+explore: zendesk_tickets {
+  from: zendesk_tickets
+}
+
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
 #
