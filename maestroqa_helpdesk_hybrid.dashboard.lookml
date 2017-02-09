@@ -198,11 +198,7 @@
       model: zendesk
       explore: zendesk_tickets
       dimensions: [zendesk_users.name]
-      measures: [zendesk_tickets.count_2, zedesk_tickets.count]
-      height: 3
-      width: 6
-      listen:
-        zendesk_tickets_count: zendesk_tickets.count
+      measures: [zendesk_tickets.count_2]
       sorts: [zendesk_tickets.count asc]
       limit: '5'
       column_limit: '50'
@@ -229,10 +225,15 @@
       show_totals_labels: false
       show_silhouette: false
       totals_color: "#808080"
-      series_types: {}
+      series_types:
+        __FILE: maestroqa_postgres/maestroqa_helpdesk_hybrid.dashboard.lookml
+        __LINE_NUM: 232
       y_axis_unpin: true
       hidden_series: [zendesk_users.count_2]
-      y_axis_labels: ['Agent Name']
-      x_axis_labels: ['# of Assigned tickets']
+      y_axis_labels: [Agent Name]
+      x_axis_labels: ["# of Assigned tickets"]
       y_axis_min: ['1000']
       y_axis_max: ['1150']
+      colors: ["#a9c574", "#929292", "#9fdee0", "#1f3e5a", "#90c8ae", "#92818d", "#c5c6a6",
+        "#82c2ca", "#cee0a0", "#928fb4", "#9fc190"]
+      series_colors: {}
