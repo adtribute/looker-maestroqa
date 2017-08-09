@@ -1,4 +1,4 @@
-view: custom_options {
+view: feedback_options {
   sql_table_name: maestro.feedback_options ;;
 
   dimension: option_id {
