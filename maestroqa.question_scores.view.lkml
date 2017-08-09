@@ -15,7 +15,7 @@ view: question_scores {
   }
 
   dimension: gradable_id {
-    description: "Integer ticket/case id this answer relates to"
+    description: "String cast ticket/case id this answer relates to"
     type: string
     sql: ${TABLE}.gradable_id ;;
   }
