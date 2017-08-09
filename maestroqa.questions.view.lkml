@@ -71,7 +71,8 @@ view: questions {
       templates.name,
       templates.template_id,
       sections.section_id,
-      options.count,
+      custom_options.count,
+      feedback_options.count,
       question_scores.count
     ]
   }

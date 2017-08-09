@@ -27,15 +27,22 @@ explore: templates {
     type:  left_outer
     relationship: one_to_many
     sql_on:  ${templates.template_id} = ${questions.template_id} and
-             ${sections.section_id} = ${questions.section_id};;
+      ${sections.section_id} = ${questions.section_id};;
 
   }
-  join: options {
+  join: custom_options {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${templates.template_id} = ${options.template_id} and
-            ${sections.section_id} = ${options.section_id} and
-            ${questions.question_id} = ${options.question_id};;
+    sql_on: ${templates.template_id} = ${custom_options.template_id} and
+            ${sections.section_id} = ${custom_options.section_id} and
+            ${questions.question_id} = ${custom_options.question_id};;
+  }
+  join: feedback_options {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${templates.template_id} = ${feedback_options.template_id} and
+            ${sections.section_id} = ${feedback_options.section_id} and
+            ${questions.question_id} = ${feedback_options.question_id};;
   }
   join: answers {
     type: left_outer
@@ -65,7 +72,7 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${section_scores.template_id} = ${sections.template_id} and
-            ${section_scores.section_id} = ${sections.section_id};;
+      ${section_scores.section_id} = ${sections.section_id};;
     fields: [name, weight, is_auto_fail, is_bonus]
   }
 
@@ -73,7 +80,7 @@ explore: rubric_answers {
     type:  left_outer
     relationship: one_to_many
     sql_on: ${answers.template_id} = ${questions.template_id} and
-            ${sections.section_id} = ${questions.section_id} ;;
+      ${sections.section_id} = ${questions.section_id} ;;
     fields: [question, description, score_min, score_max, score_system]
   }
 
@@ -85,13 +92,34 @@ explore: rubric_answers {
             ${questions.question_id} = ${question_scores.question_id};;
   }
 
-  join: options {
+  join: custom_options {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${questions.template_id} = ${options.template_id} and
-            ${questions.section_id} = ${options.section_id} and
-            ${question_scores.question_id} = ${options.question_id} and
-            ${question_scores.option_id} = ${options.option_id};;
+    sql_on: ${questions.template_id} = ${custom_options.template_id} and
+      ${questions.question_id} = ${custom_options.question_id};;
+  }
+
+  join: option_selections {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${questions.template_id} = ${option_selections.template_id} and
+            ${question_scores.question_id} = ${option_selections.question_id} and
+            ${custom_options.option_id} = ${option_selections.option_id};;
+  }
+
+  join: feedback_options {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${questions.template_id} = ${feedback_options.template_id} and
+      ${question_scores.question_id} = ${feedback_options.question_id};;
+  }
+
+  join: feedback_selections {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${questions.template_id} = ${feedback_selections.template_id} and
+            ${question_scores.question_id} = ${feedback_selections.question_id} and
+            ${feedback_options.option_id} = ${feedback_selections.option_id};;
   }
 
   ## HELPDESK ID EMAIL TO MAP GRADEE ID TO EMAIL
@@ -110,4 +138,4 @@ explore: rubric_answers {
     fields: [group_name]
   }
 
-  }
+}

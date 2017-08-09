@@ -8,8 +8,8 @@ view: helpdesk_id_email {
   }
 
   dimension: helpdesk_id {
-    description: "Zendesk/Freshdesk/Desk.com agent ID number"
-    type: number
+    description: "String cast Salesforce/Zendesk/Desk/Freshdesk  agent ID "
+    type: string
     sql: ${TABLE}.helpdesk_id ;;
   }
 

@@ -30,14 +30,14 @@ view: answers {
   }
 
   dimension: gradable_id {
-    description: "Integer ticket/case id this answer relates to"
-    type: number
+    description: "String cast ticket/case id this answer relates to"
+    type: string
     sql: ${TABLE}.gradable_id ;;
   }
 
   dimension: gradee_id {
-    description: "Zendesk/Desk.com/Freshdesk agent ID of the agent being graded"
-    type: number
+    description: "String cast Salesforce/Zendesk/Desk/Freshdesk agent ID of the agent being graded"
+    type: string
     sql: ${TABLE}.gradee_id ;;
   }
 

@@ -10,7 +10,7 @@ view: zendesk_tickets {
 
   dimension: id {
     primary_key: yes
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 
@@ -20,7 +20,7 @@ view: zendesk_tickets {
   }
 
   dimension: assignee_id {
-    type: number
+    type: string
     sql: ${TABLE}.assignee_id ;;
   }
 
@@ -115,7 +115,7 @@ view: zendesk_tickets {
   }
 
   dimension: requester_id {
-    type: number
+    type: string
     sql: ${TABLE}.requester_id ;;
   }
 
@@ -130,7 +130,7 @@ view: zendesk_tickets {
   }
 
   dimension: submitter_id {
-    type: number
+    type: string
     sql: ${TABLE}.submitter_id ;;
   }
 
