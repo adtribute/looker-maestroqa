@@ -10,7 +10,7 @@ view: section_scores {
 
   dimension: gradable_id {
     description: "Integer ticket/case id this answer relates to"
-    type: number
+    type: string
     sql: ${TABLE}.gradable_id ;;
   }
 

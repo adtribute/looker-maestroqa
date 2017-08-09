@@ -2,7 +2,7 @@ view: user_groups {
   sql_table_name: maestro.user_groups ;;
 
   dimension: agent_id {
-    type: number
+    type: string
     description: "Identifier of this agent"
     sql: ${TABLE}.agent_id ;;
   }

@@ -31,13 +31,13 @@ view: answers {
 
   dimension: gradable_id {
     description: "Integer ticket/case id this answer relates to"
-    type: number
+    type: string
     sql: ${TABLE}.gradable_id ;;
   }
 
   dimension: gradee_id {
     description: "Zendesk/Desk.com/Freshdesk agent ID of the agent being graded"
-    type: number
+    type: string
     sql: ${TABLE}.gradee_id ;;
   }
 
