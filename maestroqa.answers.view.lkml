@@ -36,7 +36,7 @@ view: answers {
   }
 
   dimension: gradee_id {
-    description: "Zendesk/Desk.com/Freshdesk agent ID of the agent being graded"
+    description: "String cast Salesforce/Zendesk/Desk/Freshdesk agent ID of the agent being graded"
     type: string
     sql: ${TABLE}.gradee_id ;;
   }
