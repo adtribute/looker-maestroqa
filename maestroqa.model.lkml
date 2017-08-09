@@ -96,7 +96,6 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${custom_options.template_id} and
-            ${questions.section_id} = ${custom_options.section_id} and
             ${questions.question_id} = ${custom_options.question_id};;
   }
 
@@ -104,7 +103,6 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${option_selections.template_id} and
-            ${questions.section_id} = ${option_selections.section_id} and
             ${question_scores.question_id} = ${option_selections.question_id} and
             ${custom_options.option_id} = ${option_selections.option_id};;
   }
@@ -113,7 +111,6 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${feedback_options.template_id} and
-            ${questions.section_id} = ${feedback_options.section_id} and
             ${question_scores.question_id} = ${feedback_options.question_id};;
   }
 
@@ -121,7 +118,6 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${feedback_selections.template_id} and
-            ${questions.section_id} = ${feedback_selections.section_id} and
             ${question_scores.question_id} = ${feedback_selections.question_id} and
             ${feedback_options.option_id} = ${feedback_selections.option_id};;
   }
