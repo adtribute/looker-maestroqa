@@ -96,8 +96,7 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${custom_options.template_id} and
-            ${questions.question_id} = ${custom_options.question_id} and
-            ${option_selections.option_id} = ${custom_options.option_id};;
+            ${questions.question_id} = ${custom_options.question_id};;
   }
 
   join: option_selections {
@@ -113,8 +112,7 @@ explore: rubric_answers {
     type: left_outer
     relationship: one_to_many
     sql_on: ${questions.template_id} = ${feedback_options.template_id} and
-            ${question_scores.question_id} = ${feedback_options.question_id} and
-            ${feedback_selections.option_id} = ${feedback_options.option_id};;
+            ${question_scores.question_id} = ${feedback_options.question_id};;
   }
 
   join: feedback_selections {
