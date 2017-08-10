@@ -102,7 +102,8 @@ explore: rubric_answers {
   join: option_selections {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${questions.template_id} = ${option_selections.template_id} and
+    sql_on: ${answers.answer_id} = ${option_selections.answer_id} and
+            ${questions.template_id} = ${option_selections.template_id} and
             ${question_scores.question_id} = ${option_selections.question_id} and
             ${custom_options.option_id} = ${option_selections.option_id};;
   }
@@ -117,7 +118,8 @@ explore: rubric_answers {
   join: feedback_selections {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${questions.template_id} = ${feedback_selections.template_id} and
+    sql_on: ${answers.answer_id} = ${feedback_selections.answer_id} and
+            ${questions.template_id} = ${feedback_selections.template_id} and
             ${question_scores.question_id} = ${feedback_selections.question_id} and
             ${feedback_options.option_id} = ${feedback_selections.option_id};;
   }
