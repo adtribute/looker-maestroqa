@@ -15,8 +15,8 @@ view: question_scores {
   }
 
   dimension: gradable_id {
-    description: "Integer ticket/case id this answer relates to"
-    type: number
+    description: "String cast ticket/case id this answer relates to"
+    type: string
     sql: ${TABLE}.gradable_id ;;
   }
 
@@ -32,12 +32,6 @@ view: question_scores {
     sql: ${TABLE}.normalized_score ;;
   }
 
-  dimension: option_id {
-    description: "ID of the option that was used to answer this question"
-    type: string
-    # hidden: yes
-    sql: ${TABLE}.option_id ;;
-  }
 
   dimension: question_id {
     description: "Identifier of the question that was answered"
