@@ -47,6 +47,12 @@ view: sections {
     sql: ${TABLE}.template_id ;;
   }
 
+  dimension: row_updated_at {
+    description: "UTC time this row was last updated"
+    type: time
+    sql: ${TABLE}.row_updated_at ;;
+  }
+
   dimension: weight {
     description: "Weight of this section"
     type: number

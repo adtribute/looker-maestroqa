@@ -59,6 +59,12 @@ view: questions {
     sql: ${TABLE}.template_id ;;
   }
 
+  dimension: row_updated_at {
+    description: "UTC time this row was last updated"
+    type: time
+    sql: ${TABLE}.row_updated_at ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
