@@ -1,5 +1,5 @@
-view: options {
-  sql_table_name: maestro.options ;;
+view: feedback_options {
+  sql_table_name: maestro.feedback_options ;;
 
   dimension: option_id {
     description: "Identifier of this option"
@@ -39,12 +39,6 @@ view: options {
     type: string
     # hidden: yes
     sql: ${TABLE}.template_id ;;
-  }
-
-  dimension: row_updated_at {
-    description: "UTC time this row was last updated"
-    type: time
-    sql: ${TABLE}.row_updated_at ;;
   }
 
   measure: count {
