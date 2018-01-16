@@ -19,6 +19,12 @@ view: user_groups {
     sql: ${TABLE}.group_name ;;
   }
 
+  dimension: row_updated_at {
+    description: "UTC time this row was last updated"
+    type: time
+    sql: ${TABLE}.row_updated_at ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [group_name]
