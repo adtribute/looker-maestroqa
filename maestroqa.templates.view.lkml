@@ -46,6 +46,12 @@ view: templates {
     sql: ${TABLE}.updated_at ;;
   }
 
+  dimension: row_updated_at {
+    description: "UTC time this row was last updated"
+    type: time
+    sql: ${TABLE}.row_updated_at ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -57,7 +63,8 @@ view: templates {
       template_id,
       name,
       answers.count,
-      options.count,
+      custom_options.count,
+      feedback_options.count,
       questions.count,
       question_scores.count,
       sections.count,

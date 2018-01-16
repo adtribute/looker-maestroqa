@@ -1,5 +1,5 @@
-view: options {
-  sql_table_name: maestro.options ;;
+view: feedback_options {
+  sql_table_name: maestro.feedback_options ;;
 
   dimension: option_id {
     description: "Identifier of this option"
