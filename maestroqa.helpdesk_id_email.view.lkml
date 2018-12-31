@@ -7,10 +7,10 @@ view: helpdesk_id_email {
     sql: ${TABLE}.email ;;
   }
 
-  dimension: agent_primary_name {
-    description: "Agent primary name of this helpdesk agent"
+  dimension: agent_name {
+    description: "Name of agent"
     type: string
-    sql: ${TABLE}.agent_primary_name ;;
+    sql: ${TABLE}.agent_name ;;
   }
 
   dimension: helpdesk_id {
