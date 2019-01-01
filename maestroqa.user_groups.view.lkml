@@ -7,6 +7,12 @@ view: user_groups {
     sql: ${TABLE}.agent_id ;;
   }
 
+  dimension: agent_availability {
+    type: yesno
+    description: "Availability of this agent"
+    sql: ${TABLE}.agent_availability ;;
+  }
+
   dimension: group_id {
     type: string
     description: "Identifier of this group"
