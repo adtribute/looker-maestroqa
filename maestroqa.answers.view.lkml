@@ -81,6 +81,12 @@ view: answers {
     sql: ${TABLE}.updated_at ;;
   }
 
+  dimension: reported {
+    description: "UTC time this answer was reported"
+    type: time
+    sql: ${TABLE}.reported_at ;;
+  }
+
   dimension: row_updated_at {
     description: "UTC time this row was last updated"
     type: time
