@@ -83,7 +83,7 @@ view: answers {
 
   dimension: reported {
     description: "UTC time this answer was reported"
-    type: date
+    type: time
     sql: ${TABLE}.reported_at ;;
   }
 
