@@ -13,6 +13,12 @@ view: helpdesk_id_email {
     sql: ${TABLE}.agent_name ;;
   }
 
+  dimension: agent_availability {
+    type: yesno
+    description: "Availability of this agent"
+    sql: ${TABLE}.agent_availability ;;
+  }
+
   dimension: helpdesk_id {
     description: "String cast Salesforce/Zendesk/Desk/Freshdesk  agent ID "
     type: string
