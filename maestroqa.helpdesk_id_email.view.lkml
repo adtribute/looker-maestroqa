@@ -7,6 +7,12 @@ view: helpdesk_id_email {
     sql: ${TABLE}.email ;;
   }
 
+  dimension: agent_name {
+    description: "Name of agent"
+    type: string
+    sql: ${TABLE}.agent_name ;;
+  }
+
   dimension: helpdesk_id {
     description: "String cast Salesforce/Zendesk/Desk/Freshdesk  agent ID "
     type: string
