@@ -35,9 +35,10 @@ view: feedback_selections {
     sql: ${TABLE}.option_id ;;
   }
 
-  dimension: row_updated_at {
+  dimension_group: row_updated {
     description: "UTC time this row was last updated"
     type: time
+    timeframes: [time, date, week, month]
     sql: ${TABLE}.row_updated_at ;;
   }
 
