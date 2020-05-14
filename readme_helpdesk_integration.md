@@ -1,5 +1,5 @@
 LOOKER.COM FORMATS THIS DOCUMENT WEIRDLY.
-PLEASE REFER TO THE [GITHUB VERSION](https://github.com/adtribute/looker-maestroqa/blob/master/helpdesk_integration.md) FOR CLEANER FORMATTING.
+PLEASE REFER TO THE [GITHUB VERSION](https://github.com/adtribute/looker-maestroqa/blob/master/readme_helpdesk_integration.md) FOR CLEANER FORMATTING.
 
 # README: Helpdesk Integration
 
@@ -9,7 +9,7 @@ This document details how one might merge an existing Looker Block with helpdesk
 
 
 ## Getting started
-If you're reading this, let's assume that you've already set up an integration between your Looker instance and MaestroQA. If this isn't the case, pop over [here](https://app.maestroqa.com/settings/integrations/looker) and get that set up. Next you'll want to ensure that you've set up an integration with whichever helpdesk you use (be it Desk.com, Zendesk, Freshdesk, Salesforce, etc.) to push helpdesk data to the **same Looker connection** that the MaestroQA<-->Looker integration uses **and** uses the new LookML. Here at Maestro, we don't set up these helpdesk<-->Looker integrations ourselves, but there are [plenty](https://www.fivetran.com/) [of](https://www.xplenty.com/) [services](https://www.stitchdata.com/) that can do just that.
+If you're reading this, let's assume that you've already set up an integration between your Looker instance and MaestroQA. If this isn't the case, pop over [here](https://app.maestroqa.com/settings/integrations/dataPiping) and get that set up. Next you'll want to ensure that you've set up an integration with whichever helpdesk you use (be it Zendesk, Freshdesk, Salesforce, etc.) to push helpdesk data to the **same Looker connection** that the MaestroQA<-->Looker integration uses **and** uses the new LookML. Here at Maestro, we don't set up these helpdesk<-->Looker integrations ourselves, but there are [plenty](https://www.fivetran.com/) [of](https://www.xplenty.com/) [services](https://www.stitchdata.com/) that can do just that.
 
 So at this point you should have a MaestroQA Looker project and a Helpdesk Looker project on the same connection. The end goal here is to have a project that contains all the views and models from _both_ projects, and an extra model that contains the Explores that combine the data from the two sources. Itemized, there are three goals here:
 1) Get Views from both projects into one project, with appropriate namespacing

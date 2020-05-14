@@ -32,7 +32,6 @@ view: question_scores {
     sql: ${TABLE}.normalized_score ;;
   }
 
-
   dimension: question_id {
     description: "Identifier of the question that was answered"
     type: string
