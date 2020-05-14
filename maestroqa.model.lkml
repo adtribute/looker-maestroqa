@@ -23,7 +23,6 @@ explore: templates {
     sql_on:  ${templates.template_id} = ${sections.template_id} ;;
   }
   join: questions {
-    from:  questions
     type:  left_outer
     relationship: one_to_many
     sql_on:  ${templates.template_id} = ${questions.template_id} and
@@ -55,7 +54,7 @@ explore: templates {
 explore: rubric_answers {
   label: "Rubric Answers"
   view_name: answers
-  from:  answers
+  from: answers
   join: templates {
     type: left_outer
     relationship: many_to_one
@@ -122,6 +121,14 @@ explore: rubric_answers {
             ${feedback_options.option_id} = ${feedback_selections.option_id};;
   }
 
+  ## ANNOTATIONS TO MAP ANSWER ID TO HIGHLIGHT
+  join: annotations {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${answers.answer_id} = ${annotations.answer_id};;
+    fields: [annotation_type, highlight, feedback]
+  }
+
   ## HELPDESK ID EMAIL TO MAP GRADEE ID TO EMAIL
   join: helpdesk_id_email {
     type: left_outer
@@ -136,6 +143,25 @@ explore: rubric_answers {
     relationship: one_to_one
     sql_on: ${answers.gradee_id} = ${user_groups.agent_id};;
     fields: [group_name]
+  }
+
+}
+
+explore: appeals {
+  label: "Appeals"
+  view_name: appeals
+  from: appeals
+  join: appeal_comments {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${appeals.appeal_id} = ${appeal_comments.appeal_id};;
+  }
+
+  join: appeal_answers {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${appeals.appeal_id} = ${appeal_answers.appeal_id} and
+            ${appeals.answer_id} = ${appeal_answers.answer_id};;
   }
 
 }
