@@ -9,7 +9,7 @@ view: answers {
   }
 
   dimension: answer_type {
-    # values are constrained to 'grading', 'calibration_review', 'calibration_final
+    # values are constrained to 'grading', 'calibration_review', 'calibration_final'
     description: "What type of rubric answer this is"
     type: string
     sql: ${TABLE}.answer_type ;;
@@ -36,7 +36,7 @@ view: answers {
   }
 
   dimension: gradee_id {
-    description: "String cast Salesforce/Zendesk/Desk/Freshdesk agent ID of the agent being graded"
+    description: "String cast Salesforce/Zendesk/Freshdesk agent ID of the agent being graded"
     type: string
     sql: ${TABLE}.gradee_id ;;
   }
