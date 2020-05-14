@@ -87,6 +87,13 @@ view: answers {
     sql: ${TABLE}.reported_at ;;
   }
 
+  dimension_group: first_saved {
+    description: "UTC time this answer was first saved"
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.first_saved_at ;;
+  }
+
   dimension_group: row_updated {
     description: "UTC time this row was last updated"
     type: time
