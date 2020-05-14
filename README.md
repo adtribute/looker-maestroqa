@@ -8,6 +8,6 @@ They include sample LookML that can be used to get started in Looker, however th
 
 Supporting documentation for our Looker [block](https://looker.com/platform/blocks/source/quality-analysis-by-maestroqa)
 
-For additional details on how to set up the integration within MaestroQA, see [this helpcenter article](https://intercom.help/maestroqa/integrate-business-intelligence-tools/push-qa-data-to-your-data-warehouse)
+For additional details on how to set up the integration within MaestroQA, see [this helpcenter article](https://help.maestroqa.com/en/articles/1557390-push-qa-data-to-your-data-warehouse)
 
 For more information on MaestroQA, check us out [our homepage](https://www.maestroqa.com/) and feel free to reach out with any questions!

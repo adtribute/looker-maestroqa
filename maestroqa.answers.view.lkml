@@ -17,7 +17,6 @@ view: answers {
 
   dimension_group: created {
     description: "UTC time this answer was created"
-    convert_tz: yes
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at ;;
@@ -81,9 +80,10 @@ view: answers {
     sql: ${TABLE}.updated_at ;;
   }
 
-  dimension: reported {
+  dimension_group: reported {
     description: "UTC time this answer was reported"
     type: time
+    timeframes: [time, date, week, month]
     sql: ${TABLE}.reported_at ;;
   }
 
@@ -94,9 +94,10 @@ view: answers {
     sql: ${TABLE}.first_saved_at ;;
   }
 
-  dimension: row_updated_at {
+  dimension_group: row_updated {
     description: "UTC time this row was last updated"
     type: time
+    timeframes: [time, date, week, month]
     sql: ${TABLE}.row_updated_at ;;
   }
 

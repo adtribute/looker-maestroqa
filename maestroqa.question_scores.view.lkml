@@ -32,7 +32,6 @@ view: question_scores {
     sql: ${TABLE}.normalized_score ;;
   }
 
-
   dimension: question_id {
     description: "Identifier of the question that was answered"
     type: string
@@ -53,9 +52,10 @@ view: question_scores {
     sql: ${TABLE}.template_id ;;
   }
 
-  dimension: row_updated_at {
+  dimension_group: row_updated {
     description: "UTC time this row was last updated"
     type: time
+    timeframes: [time, date, week, month]
     sql: ${TABLE}.row_updated_at ;;
   }
 
