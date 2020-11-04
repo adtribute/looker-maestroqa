@@ -106,10 +106,4 @@ view: answers {
     drill_fields: [answer_id, templates.name, templates.template_id, question_scores.count, section_scores.count]
   }
 
-  measure: average_total_score {
-    type: average
-    sql:  ${total_score} ;;
-    value_format_name: decimal_2
-  }
-
 }
